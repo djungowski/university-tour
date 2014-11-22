@@ -2,14 +2,19 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	
+
+	public float accelerator = 4f;
+
 	void FixedUpdate() {
+
+		Physics.bounceThreshold = 0;
 		float moveHorizontally = Input.GetAxis("Horizontal");
-		float moveUp = 0;
+		float moveUp = 0.0f;
 		float moveVertically = Input.GetAxis("Vertical");
 
 		Vector3 movement = new Vector3(moveHorizontally, moveUp, moveVertically);
-		rigidbody.AddForce(movement);
-		Debug.Log("moving: " + movement);
+
+		//this.transform.position += movement;
+		rigidbody.AddForce(movement*accelerator);
 	}
 }
