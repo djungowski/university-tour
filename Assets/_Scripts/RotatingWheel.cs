@@ -10,7 +10,7 @@ public class RotatingWheel : MonoBehaviour {
 	void Update () {
 		float verticalAcceleration = Input.GetAxis ("Vertical");
 		float speed = verticalAcceleration * speedFactor;
-		speed = Mathf.Abs (speed);
+		//speed = Mathf.Abs (speed);
 		Vector3 rotation = new Vector3 (speed, 0.0f, 0.0f);
 
 		if (Input.GetAxis ("Vertical") != 0) {
