@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.RightControl)) {
 			Vector3 currentPosition = transform.position;
 			Vector3 targetSpawnPosition = currentPosition + new Vector3(0.1f, 1.0f, 7.0f);
-			Quaternion rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+			Quaternion rotation = new Quaternion(0.0f, -180.0f, 0.0f, 0.0f);
 
 			GameObject bomb = (GameObject) Instantiate(bombPrefab, targetSpawnPosition, rotation);
 

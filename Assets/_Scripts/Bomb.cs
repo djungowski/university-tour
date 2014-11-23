@@ -7,10 +7,15 @@ public class Bomb : MonoBehaviour {
 
 	// Update is called once per frame
 	void OnCollisionEnter(Collision collision) {
-		Debug.Log ("Collision");
-		Debug.Log (collision.collider);
+		Collider target = collision.collider;
+
 		Instantiate (explosionPrefab, transform.position, Quaternion.identity);
 		Destroy (gameObject);
+
+		// Destroy Target Object it if is an enemy
+		if (target.gameObject.CompareTag ("Enemy")) {
+			Destroy(target.gameObject);
+		}
 	}
 
 
